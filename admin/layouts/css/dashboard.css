@@ -1,0 +1,96 @@
+:root {
+  --main-color: goldenrod;
+  --main-sold-color: #50a2be;
+  --second-color: #50a2bec9;
+}
+body {
+  position: relative;
+  direction: rtl;
+}
+.aside {
+  width: 20vw;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border-right: 1px solid #ddd;
+}
+.aside-body a {
+  color: #444;
+}
+.aside-body a span i {
+  background-color: #50a2bec9;
+  padding: 6px;
+  border-radius: 4px;
+  color: #fff;
+}
+.navbar-expand-lg .navbar-toggler {
+  outline: 2px solid #ddd;
+}
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.content {
+  padding: 2rem;
+  margin-top: 55px;
+}
+.dashboard-box-one {
+  background-color: #63d05d;
+}
+.dashboard-box-two {
+  background-color: orange;
+}
+.dashboard-box-three {
+  background-color: #f3616c;
+}
+.dashboard-box-four {
+  background-color: #1f63f0;
+}
+.role-name {
+  margin-left: 0.7rem;
+  font-size: 13px !important;
+}
+.role-name .role {
+  font-size: 12px;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  color: #555;
+  font-weight: 300;
+}
+.card-header {
+  border: none;
+}
+@media (max-width: 992px) {
+  .aside {
+    display: none;
+  }
+  .nav-date {
+    margin-right: 0.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .content,
+  .nav-date {
+    margin-right: 20vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .content {
+    padding: 1rem;
+  }
+}
+.active {
+  background-color: #e6a9a9 !important;
+  color: #fff !important;
+}
+.active a {
+  color: #fff !important;
+}
