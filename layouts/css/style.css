@@ -23,12 +23,13 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--main-color);
-  padding: 1rem;
+  background-color: #f7cac98b;
+  padding: 1.5rem;
   border-radius: 5px;
   width: 100%;
   margin: 1rem;
   color: #fff;
+  outline: 2px solid #f7cac9;
 }
 .login form input {
   width: 100%;
@@ -38,11 +39,12 @@ body {
   border-radius: 5px;
   outline: none;
   padding: 10px;
+  outline: 2px solid #f7cac9;
 }
 .login {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
   margin-top: 4rem;
 }
 .custom-btn {
