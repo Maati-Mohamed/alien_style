@@ -1,10 +1,14 @@
-<?php include "includes/header.php"; ?>
+<?php include "includes/header.php";
+     include "connect.php";
+      
+?>
 
 
 <!-- المحتوى الرئيسي -->
 <div class="content">
+    
     <!-- محتوى لوحة التحكم -->
-    <h5 class="text-secondary mt-3">لوحة التحكم</h5>
+    <h5 class="text-secondary">لوحة التحكم</h5>
     <div class="row mt-3">
         <div class="col-md-3">
             <div class="mb-2 text-white dashboard-box-one py-3 d-flex gap-4 justify-content-center align-items-center">

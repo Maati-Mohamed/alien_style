@@ -4,7 +4,7 @@
        $urlParts = explode('/', $url);
 
 ?>
-<div class="aside p-3">
+<div class="aside p-3 fs-5 ">
     <div class="header bg-light p-2 text-center rounded-2"> 
         <h5 class="fw-bold mb-0">Alien Style</h5>
         <span class="fs-10 text-muted">maiada@gmail.com</span>
@@ -20,7 +20,7 @@
                 <span class="ms-3 fs-5"><i class="fa fa-home"></i></span>
                 المنتجات</a>
             </li>
-            <li class="p-3 bg-light  <?php  echo in_array('categories', $urlParts) ? "active" : "" ;?>"><a href="/alien_style/admin/categories/index.php" class="tex-secondary">
+            <li class="p-3 bg-light  <?php  echo in_array('categories', $urlParts) ? "active" : "" ;?>"><a href="/alien_style/admin/categories/index.php?do=Manage" class="tex-secondary">
                 <span class="ms-3 fs-5"><i class="fa fa-users"></i></span>
                 الأقسام</a>
             </li>
