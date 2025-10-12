@@ -44,8 +44,8 @@ if($do == 'Manage'){
                     <td>'.$cat["name"].'</td>
                     <td>'.$cat["description"].'</td>
                     <td>
-                        <a href=""><i class="fa fa-edit fs-5 ms-2 cursor-pointer"></i></a>
-                        <a href="" class="delete-btn" data-bs-toggle="modal" data-bs-target="#deleteSome" data-catid="'.$cat["id"].'"><i class="fa fa-trash-alt fs-5 cursor-pointer"></i></a>
+                        <a href="?do=edit&catid='.$cat['id'].'"><i class="fa fa-edit fs-5 ms-2 cursor-pointer"></i></a>
+                        <a href="?do=delete" class="delete-btn" data-bs-toggle="modal" data-bs-target="#deleteSome" data-catid="'.$cat["id"].'"><i class="fa fa-trash-alt fs-5 cursor-pointer"></i></a>
                     </td>
                 </tr>';
                 }
@@ -60,23 +60,7 @@ if($do == 'Manage'){
 </div>
 
 <!-- نافذة الحذف -->
-<div class="modal fade" id="deleteSome">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title fw-bold w-100">تأكيد</div>
-                <button data-bs-dismiss="modal" type="button" class="btn-close"></button>
-            </div>
-            <div class="modal-body text-center">
-                هل أنت متأكد أنك تريد الحذف؟
-            </div>
-            <div class="modal-footer">
-                <div class="btn btn-danger">حذف</div>
-                <button class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
-            </div>
-        </div>
-    </div>
-</div>
+
 <?php
 } elseif ($do =='add') { ?>
         <div class="row">
@@ -127,8 +111,42 @@ if($do == 'Manage'){
             
          }
         echo "</div>";
-} elseif ($do == 'Edit') {
+} elseif ($do == 'edit') { 
+    $catid = isset($_GET['catid']) && is_numeric($_GET['catid']) ? intval($_GET['catid']): 0;
+        // select all data depent on this id
+        $stmt =$con->prepare("SELECT * FROM categories WHERE ID = ? ");
 
+        //execute query 
+        $stmt->execute(array($catid));
+        // fetch the data
+        $cat = $stmt->fetch();
+
+        $count =$stmt->rowCount();
+        if($count > 0) {?>
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title text-center mb-4">تحديث البيانات</h5>
+
+                <form action="?do=update" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">الاسم</label>
+                    <input type="text" class="form-control" id="name" placeholder="أدخل الاسم" value="<?php echo $cat['name'];?>">
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">الوصف</label>
+                    <textarea class="form-control" id="description" rows="3" placeholder="أدخل الوصف"><?php echo $cat['description'];?></textarea>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">تحديث</button>
+                </div>
+                </form>
+
+            </div>
+            </div>
+        
+<?php }
 } elseif ($do =='Update') {
 
 } elseif ($do == 'Delete') {
@@ -158,6 +176,7 @@ if($do == 'Manage'){
 ?>
 
 </div>
+
 <!-- نافذة الحذف -->
 <div class="modal fade" id="deleteSome">
     <div class="modal-dialog modal-dialog-centered">
