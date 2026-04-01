@@ -33,7 +33,6 @@ if($do == 'Manage'){
                     <th>الصور</th>
                     <th>السعر</th>
                     <th>المخزون</th>
-                    <th>الوصف</th>
                     <th>الفئة</th>
                     <th>تاريخ الإضافة</th>
                     <th>التحكم</th>
@@ -48,13 +47,12 @@ if($do == 'Manage'){
                             if (!empty($product['images'])) {
                                 $imgs = json_decode($product['images'], true);
                                 foreach($imgs as $img){
-                                    echo '<img src="../../uploads/'.$img.'" style="width:50px;height:50px;border-radius:5px;margin:2px;">';
+                                    echo '<img src="'.$img.'" style="width:50px;height:50px;border-radius:5px;margin:2px;">';
                                 }
                             }
                     echo    '</td>
                         <td>'.$product["price"].'</td>
                         <td>'.$product["stock"].'</td>
-                        <td>'.$product["description"].'</td>
                         <td>'.$product["category_name"].'</td>
                         <td>'.$product["created_at"].'</td>
                         <td>

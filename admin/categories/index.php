@@ -123,7 +123,7 @@ if($do == 'Manage'){
 
         $count =$stmt->rowCount();
         if($count > 0) {?>
-        <div class="card shadow-sm">
+        <div class="card shadow-sm" style="position: static">
             <div class="card-body">
                 <h5 class="card-title text-center mb-4">تحديث البيانات</h5>
 
